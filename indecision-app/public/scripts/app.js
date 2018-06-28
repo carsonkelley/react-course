@@ -40,7 +40,8 @@ var template = React.createElement(
 
 var user = {
     name: 'Carson',
-    age: 26
+    age: 26,
+    location: "Houston"
 };
 
 function getLocation(location) {
@@ -60,7 +61,7 @@ var templateTwo = React.createElement(
     React.createElement(
         "h1",
         null,
-        user.name
+        user.name ? user.name : "Anon"
     ),
     React.createElement(
         "p",

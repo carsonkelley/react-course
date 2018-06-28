@@ -20,7 +20,8 @@ var template = (
 
 var user = {
     name: 'Carson',
-    age: 26
+    age: 26,
+    location: "Houston"
 };
 
 function getLocation(location) {
@@ -31,7 +32,7 @@ function getLocation(location) {
 
 var templateTwo = (
     <div>
-        <h1>{user.name}</h1>
+        <h1>{user.name ? user.name : "Anon"}</h1>
         <p>Age: {user.age}</p>
         {getLocation(user.location)}
     </div>
