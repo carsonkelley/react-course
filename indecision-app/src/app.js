@@ -13,6 +13,14 @@ var template = (
     </div>
 );
 
+var templateTwo = (
+    <div>
+        <h1>Carson Kelley</h1>
+        <p>Age: 26</p>
+        <p>Location: Houston, TX</p>
+    </div>
+);
+
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
