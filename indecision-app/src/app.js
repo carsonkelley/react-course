@@ -1,8 +1,8 @@
 console.log("App.js is running");
 
 var app = {
-    title: "App",
-    subtitle: "An app",
+    title: "Indecision App",
+    subtitle: "Put your life in the hands of a computer",
 };
 
 //JSX - JavaScript XML
