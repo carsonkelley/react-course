@@ -1,32 +1,81 @@
 "use strict";
 
-var nameVar = "Carson";
-var nameVar = "Mike"; //with var you can redefine variables
-console.log('nameVar', nameVar);
+console.log("App.js is running");
 
-var nameLet = "Janae";
-nameLet = "Julieta";
-console.log("nameLet", nameLet);
+var app = {
+    title: "Indecision App",
+    subtitle: "Put your life in the hands of a computer",
+    options: ["One", "Two"]
+};
 
-var nameConst = "Francoline";
-console.log("nameConst", nameConst);
+var template = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        "p",
+        null,
+        app.subtitle
+    ),
+    React.createElement(
+        "p",
+        null,
+        app.options.length > 0 ? "Here are your options" : "No options"
+    ),
+    React.createElement(
+        "ol",
+        null,
+        React.createElement(
+            "li",
+            null,
+            "Item one"
+        ),
+        React.createElement(
+            "li",
+            null,
+            "Item two"
+        )
+    )
+);
 
-function getPetName() {
-    var petName = "Hal";
-    return petName;
+var user = {
+    name: 'Carson',
+    age: 26,
+    location: "Houston"
+};
+
+function getLocation(location) {
+    if (location) {
+        return React.createElement(
+            "p",
+            null,
+            "Location: ",
+            location
+        );
+    }
 }
 
-var petName = getPetName();
-console.log(petName);
+var templateTwo = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        user.name ? user.name : "Anon"
+    ),
+    user.age && user.age >= 18 && React.createElement(
+        "p",
+        null,
+        "Age: ",
+        user.age
+    ),
+    getLocation(user.location)
+);
 
-//block level scoped
+var appRoot = document.getElementById("app");
 
-var fullName = "Carson Kelley";
-var firstName = void 0;
-
-if (fullName) {
-    firstName = fullName.split(" ")[0];
-    console.log(firstName);
-}
-
-console.log(firstName);
+ReactDOM.render(template, appRoot);
