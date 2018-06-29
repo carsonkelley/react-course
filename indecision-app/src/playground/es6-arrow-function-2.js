@@ -26,3 +26,16 @@ const user = {
 };
 
 console.log(user.printPlacesLived());
+
+
+//Challenge area
+
+const multiplier = {
+    numbers: [1, 3, 8],
+    multiplyBy: 3,
+    multiply() {
+        return this.numbers.map((number) => number * this.multiplyBy);
+    }
+};
+
+console.log(multiplier.multiply());
