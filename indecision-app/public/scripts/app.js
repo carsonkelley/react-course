@@ -1,49 +1,65 @@
 "use strict";
 
-//arguments object - no longer bound with arrow functions
+console.log("App.js is running");
 
-var add = function add(a, b) {
-    //console.log(arguments);
-    return a + b;
+var app = {
+    title: "Indecision App",
+    subtitle: "Put your life in the hands of a computer",
+    options: ["One", "Two"]
 };
 
-console.log(add(55, 1, 1001));
+var template = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        "p",
+        null,
+        app.subtitle
+    ),
+    React.createElement(
+        "p",
+        null,
+        app.options.length > 0 ? "Here are your options" : "No options"
+    ),
+    React.createElement(
+        "ol",
+        null,
+        React.createElement(
+            "li",
+            null,
+            "Item one"
+        ),
+        React.createElement(
+            "li",
+            null,
+            "Item two"
+        )
+    )
+);
 
-//this keyword - no longer bound
+var count = 0;
 
-var user = {
-    name: "Carson",
-    cities: ["Houston", "Austin", "Broussard"],
-    printPlacesLived: function printPlacesLived() {
-        var _this = this;
+var templateTwo = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        "Count: ",
+        count
+    ),
+    React.createElement(
+        "button",
+        { id: "my-id", className: "button" },
+        "+1"
+    )
+);
+console.log(templateTwo);
+var appRoot = document.getElementById("app");
 
-        // console.log(this.name);
-        // console.log(this.cities);
-        // const that = this;
-        return this.cities.map(function (city) {
-            return _this.name + " has lived in " + city;
-        });
-
-        // this.cities.forEach( (city) => {
-        //     console.log(this.name + " has lived in " + city);
-        // });
-    }
-};
-
-console.log(user.printPlacesLived());
-
-//Challenge area
-
-var multiplier = {
-    numbers: [1, 3, 8],
-    multiplyBy: 3,
-    multiply: function multiply() {
-        var _this2 = this;
-
-        return this.numbers.map(function (number) {
-            return number * _this2.multiplyBy;
-        });
-    }
-};
-
-console.log(multiplier.multiply());
+ReactDOM.render(templateTwo, appRoot);
