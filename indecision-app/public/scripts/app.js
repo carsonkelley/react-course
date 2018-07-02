@@ -48,10 +48,12 @@ var addOne = function addOne() {
     renderCounterApp();
 };
 var minusOne = function minusOne() {
-    console.log("minus one");
+    count--;
+    renderCounterApp();
 };
 var reset = function reset() {
-    console.log("reset");
+    count = 0;
+    renderCounterApp();
 };
 
 var appRoot = document.getElementById("app");

@@ -24,10 +24,12 @@ const addOne = () => {
     renderCounterApp();
 };
 const minusOne = () => {
-    console.log("minus one");
+    count--;
+    renderCounterApp();
 };
 const reset = () => {
-    console.log("reset");
+    count = 0;
+    renderCounterApp();
 };
 
 const appRoot = document.getElementById("app");
