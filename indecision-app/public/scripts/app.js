@@ -1,13 +1,14 @@
 "use strict";
 
-var app = {
+/*
+const app = {
     title: "Visibility Toggle",
     show: false,
     buttonText: "Show"
 };
 
-var onButtonChange = function onButtonChange() {
-    if (app.show) {
+const onButtonChange = () => {
+    if(app.show) {
         app.show = false;
         app.buttonText = "Show";
     } else {
@@ -17,10 +18,29 @@ var onButtonChange = function onButtonChange() {
     render();
 };
 
-var appRoot = document.getElementById("app");
+const appRoot = document.getElementById("app");
+
+const render = () => {
+    const template = (
+        <div>
+            <h1>Visibility Toggle</h1>
+            <button onClick={onButtonChange}>{app.buttonText} Details</button>
+            {app.show && <p>These are the best details anyone has ever seen.</p>}
+        </div>
+    );
+    ReactDOM.render(template, appRoot);
+};
+
+render(); */
+var visibility = false;
+
+var toggleButton = function toggleButton() {
+    visibility = !visibility;
+    render();
+};
 
 var render = function render() {
-    var template = React.createElement(
+    var jsx = React.createElement(
         "div",
         null,
         React.createElement(
@@ -30,17 +50,16 @@ var render = function render() {
         ),
         React.createElement(
             "button",
-            { onClick: onButtonChange },
-            app.buttonText,
-            " Details"
+            { onClick: toggleButton },
+            visibility ? "Hide Details" : "Show Details"
         ),
-        app.show && React.createElement(
+        visibility && React.createElement(
             "p",
             null,
-            "These are the best details anyone has ever seen."
+            "These are some additional details that you can now see."
         )
     );
-    ReactDOM.render(template, appRoot);
+    ReactDOM.render(jsx, document.getElementById("app"));
 };
 
 render();

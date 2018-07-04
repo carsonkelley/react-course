@@ -1,3 +1,4 @@
+/*
 const app = {
     title: "Visibility Toggle",
     show: false,
@@ -26,6 +27,25 @@ const render = () => {
         </div>
     );
     ReactDOM.render(template, appRoot);
+};
+
+render(); */
+let visibility = false;
+
+const toggleButton = () => {
+    visibility = !visibility;
+    render();
+};
+
+const render = () => {
+    const jsx = (
+        <div>
+            <h1>Visibility Toggle</h1>
+            <button onClick={toggleButton}>{visibility ? "Hide Details" : "Show Details"}</button>
+            {visibility && <p>These are some additional details that you can now see.</p>}
+        </div>
+    );
+    ReactDOM.render(jsx, document.getElementById("app"));
 };
 
 render();
