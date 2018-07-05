@@ -169,10 +169,10 @@ var AddOption = function (_React$Component6) {
     }
 
     _createClass(AddOption, [{
-        key: "onFormSubmit",
-        value: function onFormSubmit(e) {
+        key: "handleAddOption",
+        value: function handleAddOption(e) {
             e.preventDefault();
-            var option = e.target.elements.option.value;
+            var option = e.target.elements.option.value.trim();
             if (option) {
                 alert(option);
             }
@@ -185,7 +185,7 @@ var AddOption = function (_React$Component6) {
                 null,
                 React.createElement(
                     "form",
-                    { onSubmit: this.onFormSubmit },
+                    { onSubmit: this.handleAddOption },
                     React.createElement("input", { type: "text", name: "option" }),
                     React.createElement(
                         "button",
