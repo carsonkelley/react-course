@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -26,7 +26,7 @@ var Counter = function (_React$Component) {
     }
 
     _createClass(Counter, [{
-        key: "handleAddOne",
+        key: 'handleAddOne',
         value: function handleAddOne() {
             this.setState(function (prevState) {
                 return {
@@ -35,7 +35,7 @@ var Counter = function (_React$Component) {
             });
         }
     }, {
-        key: "handleMinusOne",
+        key: 'handleMinusOne',
         value: function handleMinusOne() {
             this.setState(function (prevState) {
                 return {
@@ -44,36 +44,40 @@ var Counter = function (_React$Component) {
             });
         }
     }, {
-        key: "handleReset",
+        key: 'handleReset',
         value: function handleReset() {
-            alert("Reset");
+            this.setState(function () {
+                return {
+                    count: 0
+                };
+            });
         }
     }, {
-        key: "render",
+        key: 'render',
         value: function render() {
             return React.createElement(
-                "div",
+                'div',
                 null,
                 React.createElement(
-                    "h1",
+                    'h1',
                     null,
-                    "Count: ",
+                    'Count: ',
                     this.state.count
                 ),
                 React.createElement(
-                    "button",
+                    'button',
                     { onClick: this.handleAddOne },
-                    "+1"
+                    '+1'
                 ),
                 React.createElement(
-                    "button",
+                    'button',
                     { onClick: this.handleMinusOne },
-                    "-1"
+                    '-1'
                 ),
                 React.createElement(
-                    "button",
+                    'button',
                     { onClick: this.handleReset },
-                    "Reset"
+                    'Reset'
                 )
             );
         }
