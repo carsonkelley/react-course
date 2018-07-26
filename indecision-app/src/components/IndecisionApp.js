@@ -49,11 +49,11 @@ export default class IndecisionApp extends React.Component {
         if(prevState.options.length !== this.state.options.length) {
             const json = JSON.stringify(this.state.options);
             localStorage.setItem('options', json);
-            console.log("saving data");
+            //console.log("saving data");
         }
     }
     componentWillUnmount() {
-        console.log("component will unmount");
+        //console.log("component will unmount");
     }
     render() {
         const subtitle = "Put your life in the hands of a computer.";
