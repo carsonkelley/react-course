@@ -11,5 +11,5 @@ test("should generate amicable greeting from name", () => {
 });
 
 test("should generate amicable greeting from no name", () => {
-    expect(generateGreeting()).toBe("Hello Anonymous!!");
+    expect(generateGreeting()).toBe("Hello Anonymous!");
 });
